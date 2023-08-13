@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 15:49:35 by mlektaib          #+#    #+#             */
-/*   Updated: 2023/08/12 15:49:36 by mlektaib         ###   ########.fr       */
+/*   Updated: 2023/08/13 14:13:55 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ void PhoneBook::search()
         if (std::cin.eof())
             exit(0);
     }
-    index = std::stoi(input);
+    index = atoi(input.c_str());
     if (index >= 0 && index < 8)
         PhoneBook::print(index);
     else
