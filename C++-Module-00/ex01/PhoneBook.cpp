@@ -30,33 +30,33 @@ void PhoneBook::add()
 {
     std::string input;
     static int i;
-    input = "";
+    input.clear();
     while(input.length() == 0)
     {
         std::cout << "Enter first name: ";
         std::getline(std::cin, input);
         if (std::cin.eof())
-            exit(0);
+            return ;
     }
     PhoneBook::contacts[i].set_first_name(input);
-    input = "";
+    input.clear();
     while(input.length() == 0)
     {
         std::cout << "Enter last name: ";
         input = "";
         std::getline(std::cin, input);
         if (std::cin.eof())
-            exit(0);
+            return ;
     }
     PhoneBook::contacts[i].set_last_name(input);
-    input = "";
+    input.clear();
     while(input.length() == 0)
     {
         std::cout << "Enter nickname: ";
         input = "";
         std::getline(std::cin, input);
         if (std::cin.eof())
-            exit(0);
+            return ;
     }
     PhoneBook::contacts[i].set_nickname(input);
     input = "";
@@ -66,7 +66,7 @@ void PhoneBook::add()
         input = "";
         std::getline(std::cin, input);
         if (std::cin.eof())
-            exit(0);
+            return ;
     }
     PhoneBook::contacts[i].set_phone_number(input);
     input = "";
@@ -76,7 +76,7 @@ void PhoneBook::add()
         input = "";
         std::getline(std::cin, input);
         if (std::cin.eof())
-            exit(0);
+            return ;
     }
     PhoneBook::contacts[i].set_darkest_secret(input);
     i++;
@@ -122,7 +122,7 @@ void PhoneBook::search()
         input = "";
         std::getline(std::cin, input);
         if (std::cin.eof())
-            exit(0);
+            return ;
     }
     index = atoi(input.c_str());
     if (index >= 0 && index < 8)

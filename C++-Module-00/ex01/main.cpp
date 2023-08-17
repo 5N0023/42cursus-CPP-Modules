@@ -11,23 +11,26 @@
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-
+#include<iostream>
+#include<ios> //used to get stream size
+#include<limits> //used to get numeric limits
 int main(void)
 {
     PhoneBook phonebook;
     std::string input;
 
-    while (1)
+    while (!std::cin.eof())
     {
+        input.clear();
         std::cout << "Enter command: ";
         std::getline(std::cin, input);
-        if (input == "EXIT" || std::cin.eof())
+        if (input == "EXIT")
             break;
         else if (input == "ADD")
             phonebook.add();
         else if (input == "SEARCH")
             phonebook.search();
-        else
+        else if (!input.empty())
             std::cout << "Invalid command\n";
     }
     return (0);

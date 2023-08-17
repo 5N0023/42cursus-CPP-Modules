@@ -17,15 +17,14 @@
 int main(int argc, char **argv)
 {
     if (argc == 1)
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
     else
     {
         for (int i = 1; i < argc; i++)
         {
-            std::string str(argv[i]);
-            int len = (int)str.length();
-            for (int j = 0; j < len; j++)
-                std::cout << (char)std::toupper(str[j]);
+            std::string stringarg(argv[i]);
+            for (std::size_t j; j < stringarg.lenght(); j++)
+                std::cout << (char)std::toupper(stringarg[j]);
         }
         std::cout << std::endl;
     }
