@@ -23,7 +23,7 @@ int main(int argc, char **argv)
         for (int i = 1; i < argc; i++)
         {
             std::string stringarg(argv[i]);
-            for (std::size_t j; j < stringarg.lenght(); j++)
+            for (std::size_t j = 0; j < stringarg.length(); j++)
                 std::cout << (char)std::toupper(stringarg[j]);
         }
         std::cout << std::endl;

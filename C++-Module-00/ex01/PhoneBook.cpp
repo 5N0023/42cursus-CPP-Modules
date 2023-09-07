@@ -118,11 +118,11 @@ void PhoneBook::search()
     input = "";
     while(input.length() == 0 || !check_number(input))
     {
+        if (std::cin.eof())
+            return ;
         std::cout << "Enter index: ";
         input = "";
         std::getline(std::cin, input);
-        if (std::cin.eof())
-            return ;
     }
     index = atoi(input.c_str());
     if (index >= 0 && index < 8)
