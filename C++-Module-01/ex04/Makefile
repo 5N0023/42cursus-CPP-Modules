@@ -1,12 +1,14 @@
-NAME=prog
+NAME=Replace
 CC=c++
 CFLAGS=-Wall -Wextra -Werror -std=c++98
 SRCS= main.cpp
 OBJS=$(SRCS:.cpp=.o)
+INCLUDES= replace.hpp
+
 
 all: $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp $(INCLUDES)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)

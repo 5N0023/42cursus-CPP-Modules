@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/10 15:31:21 by mlektaib          #+#    #+#             */
+/*   Updated: 2023/09/10 19:51:44 by mlektaib         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Zombie.hpp"
 
 int main()
 {
     int N = 5;
-    Zombie *z1 = zombieHorde(N,"tester");
+    Zombie *z1 = zombieHorde(N,"zaza");
     for(int i = 0; i < N ; i++)
     {
         z1[i].announce();
