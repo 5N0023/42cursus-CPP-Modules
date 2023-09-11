@@ -14,7 +14,7 @@
 
 HumanB::HumanB(std::string name):name(name)
 {
-    this->weapon = nullptr;
+    this->weapon = NULL;
 }
 
 void HumanB::attack(void)
