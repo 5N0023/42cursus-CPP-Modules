@@ -1,0 +1,23 @@
+NAME=a.out
+CC=c++
+CFLAGS=
+SRCS= main.cpp  Fixed.cpp 
+OBJS=$(SRCS:.cpp=.o)
+INCLUDES=Fixed.hpp
+
+all: $(NAME)
+
+%.o: %.cpp $(INCLUDES)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+
+clean:
+	rm -f $(OBJS)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+.PHONY: all clean fclean re
