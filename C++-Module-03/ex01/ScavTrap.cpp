@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 11:39:23 by mlektaib          #+#    #+#             */
-/*   Updated: 2023/09/18 20:52:43 by mlektaib         ###   ########.fr       */
+/*   Updated: 2023/09/18 21:10:52 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ ScavTrap::ScavTrap()
 }
 ScavTrap::ScavTrap(std::string Name)
 {
-    this->Name = Name;
+    this->Name      =   Name;
     HitPoints       =   100;
     EnergyPoints    =   50;
     AttackDamage    =   20;
@@ -38,16 +38,14 @@ void ScavTrap::attack(const std::string& target)
     EnergyPoints--;
     HitPoints--;
 }
-ScavTrap::ScavTrap(ScavTrap const &src)
+ScavTrap::ScavTrap(ScavTrap const &src):ClapTrap(src)
 {
-    HitPoints       =   src.HitPoints;
-    EnergyPoints    =   src.EnergyPoints;
-    AttackDamage    =   src.AttackDamage;
     std::cout << "ScavTrap Copy constructor called" << std::endl;
 }
 
 ScavTrap & ScavTrap::operator=(ScavTrap const &src)
 {
+    this->Name      =   src.Name;
     HitPoints       =   src.HitPoints;
     EnergyPoints    =   src.EnergyPoints;
     AttackDamage    =   src.AttackDamage;

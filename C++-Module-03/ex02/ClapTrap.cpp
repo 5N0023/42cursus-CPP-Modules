@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 10:56:50 by mlektaib          #+#    #+#             */
-/*   Updated: 2023/09/18 20:52:43 by mlektaib         ###   ########.fr       */
+/*   Updated: 2023/09/18 21:06:54 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ ClapTrap::~ClapTrap()
 }
 ClapTrap::ClapTrap(ClapTrap const &src)
 {
+    this->Name      =   src.Name;
     HitPoints       =   src.HitPoints;
     EnergyPoints    =   src.EnergyPoints;
     AttackDamage    =   src.AttackDamage;
@@ -36,6 +37,7 @@ ClapTrap::ClapTrap(ClapTrap const &src)
 
 ClapTrap & ClapTrap::operator=(ClapTrap const &src)
 {
+    Name            =   src.Name;
     HitPoints       =   src.HitPoints;
     EnergyPoints    =   src.EnergyPoints;
     AttackDamage    =   src.AttackDamage;
