@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 11:39:23 by mlektaib          #+#    #+#             */
-/*   Updated: 2023/09/18 12:25:35 by mlektaib         ###   ########.fr       */
+/*   Updated: 2023/09/18 20:52:43 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 ScavTrap::ScavTrap()
 {
-    std::string defaultname = "a ScavTrap";
-    name = defaultname;
+    std::string DefaultName = "a ScavTrap";
+    Name = DefaultName;
     HitPoints       =   100;
     EnergyPoints    =   50;
     AttackDamage    =   20;
     std::cout << "ScavTrap Default constructor called" << std::endl;
 }
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string Name)
 {
-    this->name = name;
+    this->Name = Name;
     HitPoints       =   100;
     EnergyPoints    =   50;
     AttackDamage    =   20;
@@ -34,7 +34,7 @@ void ScavTrap::attack(const std::string& target)
 {
     if(!EnergyPoints || !HitPoints)
         return ;
-    std::cout << "ScavTrap " << name <<" attacks "<< target <<", causing " << AttackDamage << " points of damage!"<< std::endl;
+    std::cout << "ScavTrap " << Name <<" attacks "<< target <<", causing " << AttackDamage << " points of damage!"<< std::endl;
     EnergyPoints--;
     HitPoints--;
 }
@@ -56,7 +56,7 @@ ScavTrap & ScavTrap::operator=(ScavTrap const &src)
 
 void ScavTrap::guardGate()
 {
-    std::cout <<  name << " is now in Gate keeper mode." << std::endl;
+    std::cout <<  Name << " is now in Gate keeper mode." << std::endl;
 }
 
 ScavTrap::~ScavTrap()
@@ -66,7 +66,7 @@ ScavTrap::~ScavTrap()
 
 void ScavTrap::takeDamage(unsigned int amount)
 {
-    std::cout << "ScavTrap " << name <<" takes "<< amount << " points of damage!"<< std::endl;
+    std::cout << "ScavTrap " << Name <<" takes "<< amount << " points of damage!"<< std::endl;
     if(HitPoints < amount)
         HitPoints = 0;
     else
@@ -77,7 +77,7 @@ void ScavTrap::beRepaired(unsigned int amount)
 {
     if(!EnergyPoints)
         return ;
-    std::cout << "ScavTrap " << name <<" get repaired" << std::endl;
+    std::cout << "ScavTrap " << Name <<" get repaired" << std::endl;
     EnergyPoints--;
     HitPoints += amount;    
 }

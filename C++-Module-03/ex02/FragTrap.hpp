@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 14:50:27 by mlektaib          #+#    #+#             */
-/*   Updated: 2023/09/18 14:50:28 by mlektaib         ###   ########.fr       */
+/*   Updated: 2023/09/18 20:52:43 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class FragTrap : public ClapTrap
 {
     public:
         FragTrap();
-        FragTrap(std::string name);
+        FragTrap(std::string Name);
         FragTrap(FragTrap const &src);
         FragTrap & operator=(FragTrap const &src);
         void attack(const std::string& target);

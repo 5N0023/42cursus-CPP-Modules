@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 14:50:20 by mlektaib          #+#    #+#             */
-/*   Updated: 2023/09/18 14:50:21 by mlektaib         ###   ########.fr       */
+/*   Updated: 2023/09/18 20:52:43 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 FragTrap::FragTrap()
 {
-    std::string defaultname = "a FragTrap";
-    name = defaultname;
+    std::string DefaultName = "a FragTrap";
+    Name = DefaultName;
     HitPoints       =   100;
     EnergyPoints    =   100;
     AttackDamage    =   30;
     std::cout << "FragTrap Default constructor called" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name)
+FragTrap::FragTrap(std::string Name)
 {
-    this->name = name;
+    this->Name = Name;
     HitPoints       =   100;
     EnergyPoints    =   100;
     AttackDamage    =   30;
@@ -35,7 +35,7 @@ void FragTrap::attack(const std::string& target)
 {
     if(!EnergyPoints || !HitPoints)
         return ;
-    std::cout << "FragTrap " << name <<" attacks "<< target <<", causing " << AttackDamage << " points of damage!"<< std::endl;
+    std::cout << "FragTrap " << Name <<" attacks "<< target <<", causing " << AttackDamage << " points of damage!"<< std::endl;
     EnergyPoints--;
     HitPoints--;
 }
@@ -58,7 +58,7 @@ FragTrap & FragTrap::operator=(FragTrap const &src)
 
 void FragTrap::highFivesGuys()
 {
-    std::cout <<  name << " wants to high five." << std::endl;
+    std::cout <<  Name << " wants to high five." << std::endl;
 }
 
 FragTrap::~FragTrap()
@@ -68,7 +68,7 @@ FragTrap::~FragTrap()
 
 void FragTrap::takeDamage(unsigned int amount)
 {
-    std::cout << "FragTrap " << name <<" takes "<< amount << " points of damage!"<< std::endl;
+    std::cout << "FragTrap " << Name <<" takes "<< amount << " points of damage!"<< std::endl;
     if(HitPoints < amount)
         HitPoints = 0;
     else
@@ -79,7 +79,7 @@ void FragTrap::beRepaired(unsigned int amount)
 {
     if(!EnergyPoints)
         return ;
-    std::cout << "FragTrap " << name <<" get repaired" << std::endl;
+    std::cout << "FragTrap " << Name <<" get repaired" << std::endl;
     EnergyPoints--;
     HitPoints += amount;    
 }
