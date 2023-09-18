@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 14:50:20 by mlektaib          #+#    #+#             */
-/*   Updated: 2023/09/18 21:06:43 by mlektaib         ###   ########.fr       */
+/*   Updated: 2023/09/18 21:20:13 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void FragTrap::attack(const std::string& target)
         return ;
     std::cout << "FragTrap " << Name <<" attacks "<< target <<", causing " << AttackDamage << " points of damage!"<< std::endl;
     EnergyPoints--;
-    HitPoints--;
 }
 
 FragTrap::FragTrap(FragTrap const &src):ClapTrap(src)

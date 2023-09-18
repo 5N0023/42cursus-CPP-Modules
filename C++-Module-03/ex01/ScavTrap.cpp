@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 11:39:23 by mlektaib          #+#    #+#             */
-/*   Updated: 2023/09/18 21:10:52 by mlektaib         ###   ########.fr       */
+/*   Updated: 2023/09/18 21:20:13 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void ScavTrap::attack(const std::string& target)
         return ;
     std::cout << "ScavTrap " << Name <<" attacks "<< target <<", causing " << AttackDamage << " points of damage!"<< std::endl;
     EnergyPoints--;
-    HitPoints--;
 }
 ScavTrap::ScavTrap(ScavTrap const &src):ClapTrap(src)
 {

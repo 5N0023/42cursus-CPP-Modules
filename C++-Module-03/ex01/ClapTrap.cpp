@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 10:56:50 by mlektaib          #+#    #+#             */
-/*   Updated: 2023/09/18 21:08:04 by mlektaib         ###   ########.fr       */
+/*   Updated: 2023/09/18 21:20:13 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void ClapTrap::attack(const std::string& target)
         return ;
     std::cout << "ClapTrap " << Name <<" attacks "<< target <<", causing " << AttackDamage << " points of damage!"<< std::endl;
     EnergyPoints--;
-    HitPoints--;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
