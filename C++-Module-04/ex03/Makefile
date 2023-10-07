@@ -1,9 +1,10 @@
 Name=AMateria
 CC=c++
 CFLAGS=-Wall -Wextra -Werror -std=c++98
-SRCS= main.cpp  Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRCS=  main.cpp  AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp 
 OBJS=$(SRCS:.cpp=.o)
-INCLUDES=Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp Brain.hpp
+INCLUDES= AMateria.hpp Character.hpp Cure.hpp Ice.hpp ICharacter.hpp IMateriaSource.hpp MateriaSource.hpp
+
 
 all: $(Name)
 

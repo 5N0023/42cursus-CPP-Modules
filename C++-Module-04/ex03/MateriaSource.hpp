@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/07 13:51:44 by mlektaib          #+#    #+#             */
-/*   Updated: 2023/10/07 13:51:45 by mlektaib         ###   ########.fr       */
+/*   Created: 2023/10/07 13:51:20 by mlektaib          #+#    #+#             */
+/*   Updated: 2023/10/07 13:51:21 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
-#include "ICharacter.hpp"
 
-class ICharacter;
-
-class AMateria
+#include "IMateriaSource.hpp"
+class AMateria;
+class MateriaSource : public IMateriaSource
 {
-    protected:
-        std::string type;
+    private:
+        AMateria *materia[4];
+        int count;
     public:
-        AMateria();
-        AMateria(std::string const & type);
-        AMateria & operator=(AMateria const &src);
-        std::string const & getType() const; 
-        virtual AMateria* clone() const = 0;
-        virtual void use(ICharacter& target);
-        virtual ~AMateria();
+        MateriaSource();
+        MateriaSource(MateriaSource const & src);
+        MateriaSource & operator=(MateriaSource const & src);
+        virtual ~MateriaSource();
+        void learnMateria(AMateria*);
+        AMateria* createMateria(std::string const & type);
 };
