@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 15:40:13 by mlektaib          #+#    #+#             */
-/*   Updated: 2023/09/10 19:22:54 by mlektaib         ###   ########.fr       */
+/*   Updated: 2023/10/19 14:30:01 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,22 +38,5 @@ void Harl::complain(std::string level)
     int  l = -1;
     for (int i = 0; i < 4;i++)
         if (level == levelsArray[i])
-            l = i; 
-    switch (l)
-    {
-        case 0:
-            (this->*ptrToFunc[0])();  
-            break;
-        case 1:
-            (this->*ptrToFunc[1])(); 
-            break;
-        case 2:
-            (this->*ptrToFunc[2])(); 
-            break;
-        case 3:
-            (this->*ptrToFunc[3])(); 
-            break;
-        default:
-            break;
-    }
+            (this->*ptrToFunc[i])();
 }

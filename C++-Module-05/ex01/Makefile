@@ -1,18 +1,18 @@
 Name=Bureaucrat
 CC=c++
-CFLAGS=-Wall -Wextra -Werror -std=c++98
+CPPFLAGS=-Wall -Wextra -Werror -std=c++98
 SRCS=  main.cpp Bureaucrat.cpp  Form.cpp
 OBJS=$(SRCS:.cpp=.o)
-INCLUDES= Bureaucrat.hppc++
+INCLUDES= Bureaucrat.hpp Form.hpp
 
 
 all: $(Name)
 
 %.o: %.cpp $(INCLUDES)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CPPFLAGS) -c $< -o $@
 
 $(Name): $(OBJS)
-	$(CC) $(CFLAGS) -o $(Name) $(OBJS)
+	$(CC) -o $(Name) $(OBJS)
 
 clean:
 	rm -f $(OBJS)

@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 14:51:11 by mlektaib          #+#    #+#             */
-/*   Updated: 2023/10/19 14:51:12 by mlektaib         ###   ########.fr       */
+/*   Updated: 2023/10/20 17:30:04 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 
 
-Form::Form():name("a Form"),requiredGradeToSign(150),requiredGradeToExecute(150),sign(false)
+Form::Form():name("a Form"),sign(false),requiredGradeToSign(150),requiredGradeToExecute(150)
 {
 }
 
-Form::Form(const std::string name,int requiredGradeToSign,int requiredGradeToExecute): name(name),requiredGradeToSign(requiredGradeToSign),requiredGradeToExecute(requiredGradeToExecute),sign(false)
+Form::Form(const std::string name,int requiredGradeToSign,int requiredGradeToExecute): name(name),sign(false),requiredGradeToSign(requiredGradeToSign),requiredGradeToExecute(requiredGradeToExecute)
 {
     if (requiredGradeToSign < 1 || requiredGradeToExecute < 1)
         throw Form::GradeTooHighException();

@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 14:51:16 by mlektaib          #+#    #+#             */
-/*   Updated: 2023/10/19 14:51:17 by mlektaib         ###   ########.fr       */
+/*   Updated: 2023/10/20 17:28:54 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ const std::string Bureaucrat::getName(void) const
     return(name);
 }
 
-const int Bureaucrat::getGrade(void)const
+int Bureaucrat::getGrade(void)const
 {
     return(grade);
 }

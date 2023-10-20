@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 14:50:15 by mlektaib          #+#    #+#             */
-/*   Updated: 2023/10/19 14:50:16 by mlektaib         ###   ########.fr       */
+/*   Updated: 2023/10/20 17:34:00 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Bureaucrat
         void        decrement(void);
         void        increment(void);
         const       std::string getName(void) const;
-        const       int getGrade(void)const;
+        int         getGrade(void)const;
         void        signForm(AForm &aform);
     
         class GradeTooHighException : public std::exception
