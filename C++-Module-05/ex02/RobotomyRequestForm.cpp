@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 14:50:39 by mlektaib          #+#    #+#             */
-/*   Updated: 2023/10/22 13:28:57 by mlektaib         ###   ########.fr       */
+/*   Updated: 2023/10/22 15:37:58 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 #include <cstdlib>
 #include <ctime>
 
+
 RobotomyRequestForm::RobotomyRequestForm():AForm("RobotomyRequestForm", 72, 45),target("default")
 {
+    srand(time(NULL));
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target):AForm("RobotomyRequestForm", 72, 45),target(target)
@@ -48,7 +50,6 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
         throw RobotomyRequestForm::FormNotSignedException();
     if (executor.getGrade() > getRequiredGradeToExecute())
         throw RobotomyRequestForm::ExecuterGradeTooLowException();
-    srand(time(NULL));
     if(rand() % 2)
         std::cout <<  target << " has been robotomized successfully by " << executor.getName() << std::endl;
     else
