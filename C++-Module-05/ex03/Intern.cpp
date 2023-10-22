@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 14:50:12 by mlektaib          #+#    #+#             */
-/*   Updated: 2023/10/19 14:50:14 by mlektaib         ###   ########.fr       */
+/*   Updated: 2023/10/22 13:19:55 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,24 @@ const char *Intern::UnknownFormException::what(void) const throw()
 AForm *Intern::makeForm(std::string formName, std::string target)
 {
     AForm *form;
-
-    if (formName == "robotomy request")
+    std::string forms[3] = {"robotomy request", "presidential pardon", "shrubbery creation"};
+    if(std::find(forms, forms + 3, formName) == forms + 3)
+        throw UnknownFormException();
+    switch (formName[0])
+    {
+    case 'r':
         form = new RobotomyRequestForm(target);
-    else if (formName == "presidential pardon")
+        break;
+    case 'p':
         form = new PresidentialPardonForm(target);
-    else if (formName == "shrubbery creation")
+        break;
+    case 's':
         form = new ShrubberyCreationForm(target);
-    else
-        throw Intern::UnknownFormException();
+        break;
+    default:
+        throw UnknownFormException();
+        break;
+    }
     std::cout << "Intern creates " << formName << std::endl;
     return (form);
 }

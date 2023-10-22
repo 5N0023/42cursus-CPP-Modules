@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 14:49:12 by mlektaib          #+#    #+#             */
-/*   Updated: 2023/10/19 14:52:07 by mlektaib         ###   ########.fr       */
+/*   Updated: 2023/10/22 13:20:39 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,21 @@
 
 int main()
 {
+    try {
+        
     Bureaucrat b("b", 1);
     Intern someRandomIntern;
-    AForm* rrf;
-    rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-    std::cout << *rrf << std::endl;
-    b.signForm(*rrf);
-    b.executeForm(*rrf);
+    AForm* scf;
+    scf = someRandomIntern.makeForm("shrubbery creaation", "target");
+    std::cout << *scf << std::endl;
+    b.signForm(*scf);
+    b.executeForm(*scf);
     
-    delete rrf;
+    delete scf;
+    }
+    catch (std::exception &e)
+    {
+        std::cout << e.what() << std::endl;
+    }
     
 }
