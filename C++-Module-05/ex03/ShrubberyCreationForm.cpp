@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 14:49:32 by mlektaib          #+#    #+#             */
-/*   Updated: 2023/10/19 14:49:33 by mlektaib         ###   ########.fr       */
+/*   Updated: 2023/10/22 13:30:00 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
         throw ShrubberyCreationForm::FormNotSignedException();
     if (executor.getGrade() > getRequiredGradeToExecute())
         throw ShrubberyCreationForm::ExecuterGradeTooLowException();
-    std::ofstream outFile(target + "_shrubbery");
+    std::string outfileName = target + "_shrubbery";
+    std::ofstream outFile(outfileName.c_str());
     if(outFile.is_open() == false)
         throw ShrubberyCreationForm::OpenFileException();
     outFile << "   o x o x o o    o o x o o" << std::endl;

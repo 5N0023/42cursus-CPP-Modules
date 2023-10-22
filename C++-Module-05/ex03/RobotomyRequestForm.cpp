@@ -6,11 +6,14 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 14:49:42 by mlektaib          #+#    #+#             */
-/*   Updated: 2023/10/19 14:55:59 by mlektaib         ###   ########.fr       */
+/*   Updated: 2023/10/22 13:29:41 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
+
+#include <cstdlib>
+#include <ctime>
 
 RobotomyRequestForm::RobotomyRequestForm():AForm("RobotomyRequestForm", 72, 45),target("default")
 {
