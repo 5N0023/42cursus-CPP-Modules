@@ -1,4 +1,5 @@
 #include "ScalarConverter.hpp"
+#include <stdlib.h>
 
 ScalarConverter::ScalarConverter()
 {
@@ -117,7 +118,7 @@ void ScalarConverter::convert(std::string input)
     if (type == "Char")
         ScalarConverter::convertFromChar(input[0]);
     else if (type == "Int")
-        ScalarConverter::convertFromInt(std::atoi(input.c_str()));
+        ScalarConverter::convertFromInt(atoi(input.c_str()));
     else if (type == "Float")
         ScalarConverter::convertFromFloat(strtod(input.c_str(), NULL));
     else if (type == "Double")
