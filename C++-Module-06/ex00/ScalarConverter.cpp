@@ -6,7 +6,8 @@ ScalarConverter::ScalarConverter()
 
 ScalarConverter::ScalarConverter(const ScalarConverter &other)
 {
-    *this = other;
+    if(this != &other)
+        *this = other;
 }
 
 
@@ -14,7 +15,7 @@ ScalarConverter::~ScalarConverter()
 {
 }
 
-bool IsANumber(std::string input)
+bool ScalarConverter::isANumber(std::string input)
 {
     int i = 0;
     if (input[i] == '+' || input[i] == '-')
@@ -37,7 +38,7 @@ bool IsANumber(std::string input)
     return true;
 }
 
-bool IsFloat(std::string input)
+bool ScalarConverter::isAFloat(std::string input)
 {
     int i = 0;
     int dot = 0;
@@ -64,7 +65,7 @@ bool IsFloat(std::string input)
     return true;
 }
 
-bool IsDouble(std::string input)
+bool ScalarConverter::isADouble(std::string input)
 {
     int i = 0;
     int dot = 0;
@@ -96,11 +97,11 @@ std::string ScalarConverter::checkType(std::string input)
         return "Science";
     else if(input.length() == 1 && std::isprint(input[0]) && !isdigit(input[0]))
         return "Char";
-    else if (IsANumber(input))
+    else if (isANumber(input))
         return "Int";
-    else if (IsFloat(input))
+    else if (isAFloat(input))
         return "Float";
-    else if (IsDouble(input))
+    else if (isADouble(input))
         return "Double";
     else
         return "Impossible";
@@ -139,7 +140,7 @@ void ScalarConverter::convertFromChar(char input)
 
 void ScalarConverter::convertFromInt(int input)
 {
-    if (input < 32 || input > 126)
+    if (!std::isprint(input))
         std::cout << "char: Non displayable" << std::endl;
     else
         std::cout << "char: '" << static_cast<char>(input) << "'" << std::endl;
@@ -150,7 +151,7 @@ void ScalarConverter::convertFromInt(int input)
 
 void ScalarConverter::convertFromFloat(float input)
 {
-    if (input < 32 || input > 126)
+    if (!std::isprint(input))
         std::cout << "char: Non displayable" << std::endl;
     else
         std::cout << "char: '" << static_cast<char>(input) << "'" << std::endl;
@@ -172,7 +173,7 @@ void ScalarConverter::convertFromFloat(float input)
 
 void ScalarConverter::convertFromDouble(double input)
 {
-    if (input < 32 || input > 126)
+    if (!std::isprint(input))
         std::cout << "char: Non displayable" << std::endl;
     else
         std::cout << "char: '" << static_cast<char>(input) << "'" << std::endl;
