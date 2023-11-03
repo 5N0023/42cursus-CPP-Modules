@@ -113,7 +113,6 @@ void ScalarConverter::convert(std::string input)
 {
     std::string type = ScalarConverter::checkType(input);
     
-    std::cout << "Type: " << type << std::endl;
 
     if (type == "Char")
         ScalarConverter::convertFromChar(input[0]);

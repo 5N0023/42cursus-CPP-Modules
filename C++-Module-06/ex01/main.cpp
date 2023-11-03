@@ -8,6 +8,8 @@ int main()
     data->c2 = 'B';
 
     uintptr_t raw = Serializer::serialize(data);
+    std::cout << "data address: " << data << std::endl;
+    std::cout << "raw: " << raw << std::endl;
     Data *data2 = Serializer::deserialize(raw);
 
     std::cout << "data->c1: " << data->c1 << std::endl;
