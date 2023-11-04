@@ -67,6 +67,9 @@
         "filesystem": "cpp",
         "numeric": "cpp",
         "random": "cpp",
-        "*.tpp": "cpp"
+        "*.tpp": "cpp",
+        "list": "cpp",
+        "__memory": "cpp",
+        "span": "cpp"
     }
 }
