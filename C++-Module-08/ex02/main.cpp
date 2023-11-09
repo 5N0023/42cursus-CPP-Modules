@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 23:01:34 by mlektaib          #+#    #+#             */
-/*   Updated: 2023/11/05 23:01:35 by mlektaib         ###   ########.fr       */
+/*   Updated: 2023/11/07 11:37:34 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,9 @@ int main()
     //[...]
     mstack.push(0);
     MutantStack<int>::iterator it = mstack.begin();
-    MutantStack<int>::iterator ite = mstack.end();
     ++it;
     --it;
-    while (it != ite)
+    while (it != mstack.end())
     {
     std::cout << *it << std::endl;
     ++it;
