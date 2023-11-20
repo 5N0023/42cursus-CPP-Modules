@@ -28,6 +28,7 @@ std::map<int,float> readDATA()
         date = year + month + day;
         data[std::atoi(date.c_str())] = std::atof(exchange_rate.c_str());
     }
+    file.close();
     return(data);
 }
 
@@ -87,7 +88,7 @@ void showResult(std::string &inputFile, std::map<int,float> &data)
             std::cout << "Error: not a positive number." << std::endl;
             continue;
         }
-        if(value.length() > 4 || std::atoi(value.c_str()) < 0 || std::atoi(value.c_str()) > 1000)
+        if(std::atoi(value.c_str()) < 0 || std::atof(value.c_str()) > 1000)
         {
             std::cout << "Error: too large a number." << std::endl;
             continue;
