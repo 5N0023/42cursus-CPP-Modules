@@ -97,7 +97,7 @@ void showResult(std::string &inputFile, std::map<int,float> &data)
         while(it != data.end())
         {
             if(it->first <= dateInt)
-                result = it->second * std::atoi(value.c_str());
+                result = it->second * std::atof(value.c_str());
             else if (it->first > dateInt)
                 break;
             it++;

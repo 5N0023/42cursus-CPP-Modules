@@ -9,7 +9,6 @@ int main(int argc, char **args)
         std::cerr << "Error: could not open file." << std::endl;
         return(1);
     }
-    //read cvs file
     std::map<int,float> data = readDATA();
     std::string inputFileName = args[1];
     std::string inputFile = readInputFile(inputFileName);

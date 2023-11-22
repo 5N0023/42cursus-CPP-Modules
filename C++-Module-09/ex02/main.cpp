@@ -22,12 +22,12 @@ int main(int argc, char *argv[])
     clock_t start = clock();
     mergeSort(array);
     clock_t end = clock();
-    vectorTime = (double)(end - start) / 100000;
+    vectorTime = static_cast<double>(end - start) / 10000;
     printArray("After:  ", array);
     start = clock();
     mergeSort(deque);
     end = clock();
-    dequeTime = (double)(end - start) / 100000;
+    dequeTime = static_cast<double>(end - start) / 10000;
     std::cout << "Time to process a range of " << size << " elements with std::vector : "<< vectorTime << " us" << std::endl;
     std::cout << "Time to process a range of " << size << " elements with std::deque   : "<< dequeTime << " us" << std::endl;
     return(0);

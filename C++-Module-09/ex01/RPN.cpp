@@ -77,7 +77,7 @@ void rpn(std::string input, std::stack<int> &stack)
                 std::cerr << "Error" << std::endl;
                 exit(1);
             }
-            result = a / b;
+            result = b / a;
             stack.push(result);
         }
         else

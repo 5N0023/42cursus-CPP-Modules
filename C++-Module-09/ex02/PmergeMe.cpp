@@ -21,7 +21,17 @@ void checkNumber(std::string number)
 void mergeSort(std::vector<int> &array)
 {
     size_t size = array.size();
-    if(size < 2)
+    if(array.size() == 2)
+    {
+        if(array[0] > array[1])
+        {
+            int tmp = array[0];
+            array[0] = array[1];
+            array[1] = tmp;
+        }
+        return;
+    }
+    if(size < 3)
         return;
     size_t middle = size / 2;
     std::vector<int> left;
@@ -35,41 +45,39 @@ void mergeSort(std::vector<int> &array)
     merge(array, left, right);
 }
 
-void merge(std::vector<int> &array, std::vector<int> &left, std::vector<int> &right)
-{
+
+
+
+
+void merge(std::vector<int> &array, std::vector<int> &left, std::vector<int> &right) {
+    std::vector<int>  indexes;
     size_t leftSize = left.size();
     size_t rightSize = right.size();
-    size_t i = 0;
     size_t l = 0;
     size_t r = 0;
     while (l < leftSize && r < rightSize)
     {
-        if(left[l] <= right[r])
+        std::vector<int>::iterator it = std::lower_bound(left.begin(), left.end(), right[r]);
+        size_t index;
+        if(it == left.end())
+            index = leftSize;
+        else 
+            index = std::distance(left.begin(), it);
+        array[index+r] = right[r];
+        indexes.push_back(index+r);
+        r++;
+    }
+    for (size_t x = 0; x < array.size(); x++)
+    {
+        if(std::find(indexes.begin(), indexes.end(), x) == indexes.end())
         {
-            array[i] = left[l];
+            array[x] = left[l];
             l++;
         }
-        else
-        {
-            array[i] = right[r];
-            r++;
-        }
-        i++;
     }
-    while (l < leftSize)
-    {
-        array[i] = left[l];
-        l++;
-        i++;
-    }
-    while (r < rightSize)
-    {
-        array[i] = right[r];
-        r++;
-        i++;
-    }
-
 }
+
+
 
 void printArray(std::string message, std::vector<int> &array)
 {
@@ -86,7 +94,17 @@ void printArray(std::string message, std::vector<int> &array)
 void mergeSort(std::deque<int> &deque)
 {
     size_t size = deque.size();
-    if(size < 2)
+    if(deque.size() == 2)
+    {
+        if(deque[0] > deque[1])
+        {
+            int tmp = deque[0];
+            deque[0] = deque[1];
+            deque[1] = tmp;
+        }
+        return;
+    }
+    if(size < 3)
         return;
     size_t middle = size / 2;
     std::deque<int> left;
@@ -100,38 +118,34 @@ void mergeSort(std::deque<int> &deque)
     merge(deque, left, right);
 }
 
-void merge(std::deque<int> &deque, std::deque<int> &left, std::deque<int> &right)
-{
+
+
+
+
+void merge(std::deque<int> &deque, std::deque<int> &left, std::deque<int> &right) {
+    std::deque<int>  indexes;
     size_t leftSize = left.size();
     size_t rightSize = right.size();
-    size_t i = 0;
     size_t l = 0;
     size_t r = 0;
     while (l < leftSize && r < rightSize)
     {
-        if(left[l] <= right[r])
+        std::deque<int>::iterator it = std::lower_bound(left.begin(), left.end(), right[r]);
+        size_t index;
+        if(it == left.end())
+            index = leftSize;
+        else 
+            index = std::distance(left.begin(), it);
+        deque[index+r] = right[r];
+        indexes.push_back(index+r);
+        r++;
+    }
+    for (size_t x = 0; x < deque.size(); x++)
+    {
+        if(std::find(indexes.begin(), indexes.end(), x) == indexes.end())
         {
-            deque[i] = left[l];
+            deque[x] = left[l];
             l++;
         }
-        else
-        {
-            deque[i] = right[r];
-            r++;
-        }
-        i++;
     }
-    while (l < leftSize)
-    {
-        deque[i] = left[l];
-        l++;
-        i++;
-    }
-    while (r < rightSize)
-    {
-        deque[i] = right[r];
-        r++;
-        i++;
-    }
-
 }
